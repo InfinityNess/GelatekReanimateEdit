@@ -1,7 +1,7 @@
 ![Default](https://user-images.githubusercontent.com/76650942/178831019-819f6dd5-9a22-4d6c-8495-6b4ab1df57af.png)
 
 # Gelatek Reanimate!
-This is the one of the best reanimate I ever made, it's stablest and less jittery from my other reanimations! It Has:
+This is the one of the best reanimates Gelatek ever made, it's extremely stable and less jittery from Gelateks other reanimations! It Has:
 - Better Source Code,
 - Optimized,
 - R6 and R15 Support,
@@ -68,7 +68,8 @@ https://www.roblox.com/catalog/5973840187/Left-Sniper-Shoulder
 
 # Credits:
 - Gelatek: Founder, Main Coder
-- ProductionTakeOne: Properties, Optimizations, Help and stuff.
+- ProductionTakeOne: Properties, Optimizations, Help and stuff
 - Mizt: Hat Renamer/Fixer, Inspiration
 - MyWorld: Help With Delayless
 - 4eyedfool: Faster Heartbeat
+- Table.insert: This edit
