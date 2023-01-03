@@ -69,6 +69,7 @@ local IsBulletEnabled = Config.BulletEnabled or false -- Enable Bullet
 local BulletConfig = Config.BulletConfig or {}
 local BulletAfterReanim = BulletConfig.RunAfterReanimate or false -- Run After Reanimate
 local LockBulletOnTorso = BulletConfig.LockBulletOnTorso or false -- Lock Bullet On Torso
+local ElementalCrystalBullet = BulletConfig.ElementalCrystalBullet or false --Elemental Crystal Bullet
 if IsTorsoFling == true and IsBulletEnabled == true then
 	IsTorsoFling = false
 end
@@ -524,14 +525,6 @@ do --[[ Bullet/TorsoFling Checking ]]--
 		else
 			BulletHatInfo = {Character:FindFirstChild("Robloxclassicred"), FakeRig:FindFirstChild("Left Arm"), CFrame.Angles(0,0,math.rad(90)), Vector3.new(), Vector3.new()}
 		end
-		if not Character:FindFirstChild("RockAccessory") and IsPermaDeath == false then
-			local FakeHat = TestService:FindFirstChild("GelatekReanimateData"):FindFirstChild("R6FakeHat"):Clone()
-			FakeHat.Parent = Character
-			BulletHatInfo = {FakeHat, FakeRig:FindFirstChild("Left Arm"), CFrame.Angles(0,0,math.rad(90)), CFrame.new(), Vector3.new(), Vector3.new(0, 0, 90)}
-		else
-			BulletHatInfo = {Character:FindFirstChild("RockAccessory"), FakeRig:FindFirstChild("Left Arm"), CFrame.Angles(0,0,math.rad(90)), Vector3.new(), Vector3.new()}
-			
-		end
 		BulletPartInfo = {Character:FindFirstChild("Left Arm"), FakeRig:FindFirstChild("Left Arm")}
 	elseif IsBulletEnabled == true and RigType == "R6" and IsPermaDeath == true then
 		BulletPartInfo = {Character:FindFirstChild("HumanoidRootPart"), FakeRig:FindFirstChild("HumanoidRootPart"), CFrame.new(), Vector3.new(), Vector3.new(), "yes"}
@@ -587,6 +580,9 @@ do --[[ Bullet/TorsoFling Checking ]]--
 		BulletPartInfo[1].Name = 'Bullet'
 		BulletPartInfo[1].Transparency = 0.5
 		Highlight.Parent = BulletPartInfo[1]
+	end
+	if IsBulletEnabled == true and RigType == "R6" and IsPermaDeath == false and ElementalCrystalBullet == true then
+	    BulletHatInfo = {Character:FindFirstChild("RockAccessory"), FakeRig:FindFirstChild("Left Arm"), CFrame.Angles(0,0,math.rad(90)), Vector3.new(), Vector3.new()}
 	end
 end
 
