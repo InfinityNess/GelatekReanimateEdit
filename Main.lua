@@ -409,10 +409,6 @@ local RootPart = Character:WaitForChild("HumanoidRootPart")
 local CharacterDescendants = Character:GetDescendants()
 local CharacterChildren = Character:GetChildren()
 local CameraCFrame = workspace.CurrentCamera.CFrame
-local FakeHats = Instance.new("Folder"); do
-	FakeHats.Name = "FakeHats"
-	FakeHats.Parent = Character
-end
 local RigType = Humanoid.RigType.Name
 Global.RealChar = Character
 Character.Archivable = true
@@ -641,15 +637,6 @@ if IsPermaDeath == true then
 		game:GetService("StarterGui"):SetCore("ResetButtonCallback", true)
 		warn("Godmoded in: " .. string.sub(tostring(tick()-Speed),1,string.find(tostring(tick()-Speed),".")+5))
 	end)
-end
--- fakehats for stop script for my hub
-for _, v in pairs(Character:GetChildren()) do
-	if v:IsA("Accessory") then
-		local FakeHats1 = v:Clone()
-		FakeHats1.Handle.Transparency = 1
-		ReCreateWelds(FakeRig, FakeHats1)
-		FakeHats1.Parent = FakeHats
-	end
 end
 
 do -- [[ Boosting Tweaks/Claims ]] --
