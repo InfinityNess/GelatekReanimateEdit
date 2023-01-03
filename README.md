@@ -43,7 +43,8 @@ Global.GelatekReanimateConfig = {
     ["BulletEnabled"] = false,
     ["BulletConfig"] = {
         ["RunAfterReanimate"] = false,
-        ["LockBulletOnTorso"] = false
+        ["LockBulletOnTorso"] = false,
+	["ElementalCrystalBullet"] = false,
     }
 }
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekReanimate/main/Main.lua"))()
