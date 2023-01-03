@@ -546,7 +546,13 @@ do --[[ Bullet/TorsoFling Checking ]]--
 			BulletPartInfo = {Character:FindFirstChild("LeftUpperArm"), FakeRig:FindFirstChild("Left Arm") or FakeRig:FindFirstChild("LeftUpperArm"), CFrame.new(0, 0, 0), Vector3.new(0, -0, 0), Vector3.new()}	
 		end
 	elseif IsBulletEnabled == true and RigType == "R6" and IsPermaDeath == false and ElementalCrystalBullet == true then
-	    BulletHatInfo = {Character:FindFirstChild("RockAccessory"), FakeRig:FindFirstChild("Left Arm"), CFrame.Angles(0,0,math.rad(90)), Vector3.new(), Vector3.new()}
+	    if not Character:FindFirstChild("RockAccessory") then
+	        local FakeHat = TestService:FindFirstChild("GelatekReanimateData"):FindFirstChild("R6FakeHat"):Clone()
+			FakeHat.Parent = Character
+			BulletHatInfo = {FakeHat, FakeRig:FindFirstChild("Left Arm"), CFrame.Angles(0,0,math.rad(90)), CFrame.new(), Vector3.new(), Vector3.new(0, 0, 90)}
+	    else
+	        BulletHatInfo = {Character:FindFirstChild("RockAccessory"), FakeRig:FindFirstChild("Left Arm"), CFrame.Angles(0,0,math.rad(90)), Vector3.new(), Vector3.new()}
+	    end
 	end
 	if IsTorsoFling == true then
 		CollideFlingPart = Character:FindFirstChild("Torso") or Character:FindFirstChild("UpperTorso")
