@@ -443,7 +443,7 @@ local FakeRig; do -- [[ Rig Maker ]] --
 				Misc.Transparency = 1
 			end
 		end
-		FakeRig.Parent = workspace
+		FakeRig.Parent = game.Players.LocalPlayer.Character
 	else
 		FakeRig = Character:Clone() 
 		FakeRig.Name = "GelatekReanimate"
@@ -455,7 +455,7 @@ local FakeRig; do -- [[ Rig Maker ]] --
 			end
 		end
 		FakeRig:FindFirstChildWhichIsA("Humanoid").DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
-		FakeRig.Parent = workspace
+		FakeRig.Parent = game.Players.LocalPlayer.Character
 	end
 	FakeRig.HumanoidRootPart.CFrame = RootPart.CFrame
 end
